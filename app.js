@@ -17,40 +17,24 @@ io.origins(['https://me.linneaolofsson.me:443', 'http://localhost:3000'])
 const baseURL = "http://localhost:1337/marketplace/";
 // const baseURL = "https://me-api.linneaolofsson.me/marketplace/";
 
-
-// let princessTarta = {
-//     name: "Princesstårta",
-//     rate: 1.002,
-//     variance: 1,
-//     startingPoint: 20,
-// };
-//
-// let mandelKubb = {
-//     name: "Mandel kubb",
-//     rate: 1.001,
-//     variance: 0.4,
-//     startingPoint: 20,
-// };
-
-let cakes;
+let allObjects;
 //make different items have different startingpoints?
 
 fetch(baseURL)
     .then(res => res.json())
     .then(data => {
         // console.log(data);
-        // let cakes = data;
+        // let allObjects = data;
         data.forEach((item, i) => {
             item.startingPoint = 25;
 
-        cakes = data;
+        allObjects = data;
 
-        return cakes;
+        return allObjects;
         });
 
     });
 
-// cakes = [princessTarta, mandelKubb];
 
 io.on('connection', function (socket) {
     console.log("Connected!");
@@ -61,16 +45,14 @@ io.on('connection', function (socket) {
 });
 
 //funktion som ändrar startintervallet var 5e sekund och emittar den
-//Fungerar, skickar ut nya värden på cakes var femte sekund
+//Fungerar, skickar ut nya värden på allObjects var femte sekund
 setInterval(function() {
-    cakes.map((cake) => {
-        cake["startingPoint"] = stock.getPrice(cake);
-        return cake;
+    allObjects.map((object) => {
+        object["startingPoint"] = stock.getPrice(object);
+        return object;
     });
 
-    console.log(cakes);
-
-    io.emit("stocks", cakes);
+    io.emit("stocks", allObjects);
 }, 5000);
 
 server.listen(8300);
