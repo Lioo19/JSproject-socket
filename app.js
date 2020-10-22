@@ -52,6 +52,7 @@ setInterval(function() {
         return object;
     });
 
+
     io.emit("stocks", allObjects);
 }, 5000);
 
