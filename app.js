@@ -14,7 +14,7 @@ app.use(cors());
 io.origins(['https://me.linneaolofsson.me:443', 'http://localhost:3000'])
 
 
-const baseURL = "http://localhost:1337/marketplace/";
+const baseURL = "http://localhost:1337/marketplace/all";
 // const baseURL = "https://me-api.linneaolofsson.me/marketplace/";
 
 let allObjects;
@@ -32,12 +32,11 @@ fetch(baseURL)
 
         return allObjects;
         });
-
-    });
+});
 
 
 io.on('connection', function (socket) {
-    console.log("Connected!");
+        console.info("Connected");
 
     io.on("disconnect", function (socket) {
         console.info("Disconnected");
@@ -52,9 +51,9 @@ setInterval(function() {
         return object;
     });
 
-
     io.emit("stocks", allObjects);
 }, 5000);
+
 
 server.listen(8300);
 console.log("server is listening on port 8300");
