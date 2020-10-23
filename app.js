@@ -10,7 +10,7 @@ const fetch = require('node-fetch');
 
 app.use(cors());
 
-io.origins(['https://project.linneaolofsson.me:443', 'http://localhost:3000'])
+io.origins(['https://project.linneaolofsson.me', 'http://localhost:3000'])
 
 
 // const baseURL = "http://localhost:1337/marketplace/all";
