@@ -1,4 +1,3 @@
-
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -15,7 +14,7 @@ io.origins(['https://project.linneaolofsson.me:443', 'http://localhost:3000'])
 
 
 // const baseURL = "http://localhost:1337/marketplace/all";
-const baseURL = "https://project-api.linneaolofsson.me/marketplace/";
+const baseURL = "https://project-api.linneaolofsson.me/marketplace/all";
 
 let allObjects;
 //make different items have different startingpoints?
