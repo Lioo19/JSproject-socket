@@ -1,0 +1,1 @@
+För att kunna skapa en realtids-mikroservice används socket.io som grund, valet var enkelt då detta verktyg är stabilt och etablerat. Genom att hämta datan direkt från vårt API får vi en snabb koppling där servicen senare skickar ut uppdaterad information om priset var femte sekund.

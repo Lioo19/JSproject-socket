@@ -11,11 +11,11 @@ const fetch = require('node-fetch');
 
 app.use(cors());
 
-io.origins(['https://me.linneaolofsson.me:443', 'http://localhost:3000'])
+io.origins(['https://project.linneaolofsson.me:443', 'http://localhost:3000'])
 
 
-const baseURL = "http://localhost:1337/marketplace/all";
-// const baseURL = "https://me-api.linneaolofsson.me/marketplace/";
+// const baseURL = "http://localhost:1337/marketplace/all";
+const baseURL = "https://project-api.linneaolofsson.me/marketplace/";
 
 let allObjects;
 //make different items have different startingpoints?
@@ -55,5 +55,5 @@ setInterval(function() {
 }, 5000);
 
 
-server.listen(8300);
-console.log("server is listening on port 8300");
+server.listen(8400);
+console.log("server is listening on port 8400");
