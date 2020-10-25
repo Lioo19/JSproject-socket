@@ -9,8 +9,8 @@ let stock = {
         let variance = 0.1;
         let total = start * rate + variance * stock.random0();
 
-        if (total > 2000) {
-            return total - 1000;
+        if (total > 1000) {
+            return total - 750;
         }
         return total;
     }
