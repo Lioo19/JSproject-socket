@@ -7,11 +7,9 @@ const io = require('socket.io').listen(server);
 const stock = require("./socket-simulation.js");
 const fetch = require('node-fetch');
 
+io.origins(['https://project.linneaolofsson.me:443', 'https://project-api.linneaolofsson.me:443', 'http://localhost:3000'])
 
 app.use(cors());
-
-io.origins(['https://project.linneaolofsson.me:443', 'http://localhost:3000'])
-
 
 // const baseURL = "http://localhost:1337/marketplace/all";
 const baseURL = "https://project-api.linneaolofsson.me/marketplace/all";
