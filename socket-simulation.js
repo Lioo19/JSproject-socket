@@ -6,7 +6,7 @@ let stock = {
     getPrice: function (input) {
         let start = input.startingPoint;
         let rate = 1.002;
-        let variance = 0.1;
+        let variance = 0.2;
         let total = start * rate + variance * stock.random0();
 
         if (total > 1000) {
